@@ -17,7 +17,8 @@ while True:
     while clientMsg != "1" and clientMsg != "quit":
         print("Enter '1' to have a number be randomly generated & add a random special item to this week's shopping list.")
         print("Or, enter 'quit' to exit this microservice.")
-        clientMsg = input(">> ")
+        with open ('treat.txt', 'r') as f:
+            clientMsg = f.readline()
 
     if "quit" in clientMsg:
         clientSocket.send(clientMsg.encode())
