@@ -15,14 +15,16 @@ if inp == 'y':
         new_item = input("- ")
         if new_item == 'END':
             print("Thank you for using the shopping list application! Here are the items you added to your shopping list:\n")
-            print(shopping_list)
+            for item in shopping_list:
+                print(item)
             break
         shopping_list.append(new_item)
 
 elif inp == 'n':
     ans = input("Would you like to view the current list? (y/n): ")
     if ans == 'y':
-        print(shopping_list)
+        for item in shopping_list:
+            print(item)
     else:
         print("Thank you for using the shopping list app!\n")
         
