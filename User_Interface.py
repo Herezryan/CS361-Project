@@ -23,25 +23,41 @@ if inp == 'y':
             ans1 = input("\nWould you like to roll for a random sweet to add to your shopping list? (y/n): ")
             if ans1 == 'y':
                 f = open("treat.txt", 'w')
-                f.write(1)
+                f.write("run")
                 f.close()
-                f2 = open ("treat.txt", 'r')
+                time.sleep(5)
+                f2 = open ("choice.txt", 'r')
                 numb = f2.readline()
                 f2.close()
-                shopping_list.append(special_list[numb])
+                shopping_list.append(special_list[int(numb)])
+                print("\nYou added: ")
+                print(special_list[int(numb)])
+
+                ans2 = input("\nWould you like to save your list as a text document? (y/n): ")
+                if ans2 == 'y':
+                    file3 = open("Shopping-List.txt", 'w')
+                    file3.write("Shopping List:\n")
+                    for item in shopping_list:
+                        file3.write("\n" + item + "\n")
+                    file3.close()
+                    print("\nYour file is saved as Shopping-List.txt, thank you for using the app!")
             else:
                 ans = input("\nWould you like to view the current list? (y/n): ")
                 if ans == 'y':
                     for item in shopping_list:
                         print(item)
+
+                ans2 = input("\nWould you like to save your list as a text document? (y/n): ")
+                if ans2 == 'y':
+                    file3 = open("Shopping-List.txt", 'w')
+                    file3.write("Shopping List:\n")
+                    for item in shopping_list:
+                        file3.write("\n" + item + "\n")
+                    file3.close()
+                    print("\nYour file is saved as Shopping-List.txt, thank you for using the app!")
             break
         shopping_list.append(new_item)
 
 elif inp == 'n':
-    ans = input("Would you like to view the current list? (y/n): ")
-    if ans == 'y':
-        for item in shopping_list:
-            print(item)
-    else:
-        print("Thank you for using the shopping list app!\n")
+    print("\nThank you for using the shopping list application!\n")
         
