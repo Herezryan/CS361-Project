@@ -15,8 +15,7 @@ while True:
     clientMsg = ""
 
     while clientMsg != "1" and clientMsg != "quit":
-        print("Enter '1' to have a number be randomly generated & add a random special item to this week's shopping list.")
-        print("Or, enter 'quit' to exit this microservice.")
+        print("Waiting to generate random number")
         with open ('treat.txt', 'r') as f:
             clientMsg = f.readline()
 

@@ -25,9 +25,13 @@ if inp == 'y':
                 f = open("treat.txt", 'w')
                 f.write(1)
                 f.close()
+                f2 = open ("treat.txt", 'r')
+                numb = f2.readline()
+                f2.close()
+                shopping_list.append(special_list[numb])
             else:
                 ans = input("\nWould you like to view the current list? (y/n): ")
-                 if ans == 'y':
+                if ans == 'y':
                     for item in shopping_list:
                         print(item)
             break
